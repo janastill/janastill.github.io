@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jana Still — Author</title>
+  <meta name="description" content="Official site of Jana Still — author of short stories, novellas, scripts, and fairy tales." />
+  <link rel="canonical" href="https://janastill.github.io/" />
+
+  <!-- Open Graph & Twitter -->
+  <meta property="og:title" content="Jana Still — Author" />
+  <meta property="og:description" content="Official site of Jana Still — author of short stories, novellas, scripts, and fairy tales." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://janastill.github.io/" />
+  <meta property="og:image" content="https://placehold.co/1200x630/png?text=Jana+Still+—+Author" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Literata:opsz,wght@7..72,400;7..72,600;7..72,800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #0b0c0f;
+      --panel: #12141a;
+      --text: #e6e6e6;
+      --muted: #b4b4b4;
+      --link: #6ea8fe;
+      --accent: #ffd166;
+      --border: #252833;
+      --maxw: 1100px;
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    @media (prefers-color-scheme: light){
+      :root{ --bg:#f7f7fb; --panel:#ffffff; --text:#1b1e24; --muted:#5a5f72; --link:#2b6df8; --border:#e8e8ef; }
+    }
+    html,body{height:100%;}
+    body{
+      margin:0; background:var(--bg); color:var(--text); font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      line-height:1.6; font-size:17px;
+    }
+    .container{ max-width:var(--maxw); margin:0 auto; padding:0 20px; }
+    a{ color:var(--link); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    /* Skip link */
+    .skip{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;}
+    .skip:focus{ left:20px; top:20px; width:auto; height:auto; padding:10px 14px; background:var(--panel); border:1px solid var(--border); border-radius:10px; z-index:999; }
+
+    /* Header */
+    header{ position:sticky; top:0; backdrop-filter:saturate(140%) blur(10px); background:color-mix(in oklch, var(--bg) 70%, transparent); border-bottom:1px solid var(--border); z-index:50; }
+    .nav{ display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 0; }
+    .brand{ display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.4px; }
+    .brand .logo{ width:36px; height:36px; border-radius:50%; background:linear-gradient(135deg, var(--accent), #6ea8fe); box-shadow:var(--shadow);}
+    nav a{ margin-left:18px; font-weight:600; }
+
+    /* Hero */
+    .hero{ padding:64px 0 28px; }
+    .hero-wrap{ display:grid; grid-template-columns:1.2fr .8fr; gap:32px; align-items:center; }
+    h1{ font-family:Literata, Georgia, serif; font-size:44px; line-height:1.15; margin:0 0 12px; }
+    .tagline{ font-size:20px; color:var(--muted); margin:0 0 18px; }
+    .cta{ display:flex; gap:12px; flex-wrap:wrap; }
+    .btn{ display:inline-flex; align-items:center; gap:10px; padding:12px 18px; border-radius:12px; border:1px solid var(--border); background:var(--panel); color:var(--text); font-weight:700; text-decoration:none; box-shadow:var(--shadow); }
+    .btn.primary{ background:linear-gradient(135deg, #6ea8fe, #8ec5ff); color:#0b1020; border-color:transparent; }
+    .btn:hover{ filter:brightness(1.03); text-decoration:none; }
+    .portrait{ width:100%; aspect-ratio:4/5; border-radius:16px; background:url('https://placehold.co/800x1000/png?text=Author+Portrait'); background-size:cover; background-position:center; border:1px solid var(--border); box-shadow:var(--shadow); }
+
+    /* Sections */
+    section{ padding:28px 0 10px; }
+    .section-title{ font-family:Literata, Georgia, serif; font-size:28px; margin:18px 0; }
+
+    /* Books grid */
+    .grid{ display:grid; grid-template-columns:repeat(12, 1fr); gap:20px; }
+    .book-card{ grid-column:span 6; background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); display:grid; grid-template-columns:140px 1fr; }
+    .book-cover{ width:100%; height:100%; min-height:180px; background:#0d1117 url('https://placehold.co/360x540/png?text=Book+Cover') center/cover no-repeat; }
+    .book-body{ padding:16px; }
+    .book-title{ font-weight:800; font-size:20px; margin:0 0 6px; }
+    .book-meta{ color:var(--muted); font-size:14px; margin-bottom:10px; }
+    .book-actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; }
+
+    /* Newsletter */
+    .nl{ background:linear-gradient(180deg, color-mix(in oklch, var(--panel) 75%, transparent), transparent); border:1px dashed var(--border); border-radius:var(--radius); padding:18px; }
+    .nl form{ display:flex; gap:10px; flex-wrap:wrap; }
+    .nl input{ flex:1; min-width:240px; padding:12px 14px; border-radius:10px; border:1px solid var(--border); background:var(--panel); color:var(--text); }
+    .nl button{ padding:12px 16px; border-radius:10px; border:0; background:#6ea8fe; color:#0b1020; font-weight:800; cursor:pointer; box-shadow:var(--shadow); }
+
+    /* About */
+    .about{ background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:18px; }
+
+    /* Footer */
+    footer{ padding:40px 0 60px; color:var(--muted); }
+    .socials a{ margin-right:14px; }
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .hero-wrap{ grid-template-columns:1fr; }
+      .book-card{ grid-column:span 12; grid-template-columns:110px 1fr; }
+    }
+    @media (max-width: 560px){
+      h1{ font-size:34px; }
+      .book-card{ grid-template-columns:1fr; }
+    }
+  </style>
+
+  <!-- Structured Data (update with your real info) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jana Still",
+    "url": "https://janastill.github.io/",
+    "jobTitle": "Author",
+    "sameAs": [
+      "https://twitter.com/YOUR_HANDLE",
+      "https://www.instagram.com/YOUR_HANDLE",
+      "https://www.goodreads.com/author/show/YOUR_ID"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header>
+    <div class="container nav">
+      <div class="brand"><span class="logo" aria-hidden="true"></span> <span>Jana Still</span></div>
+      <nav aria-label="Primary">
+        <a href="#books">Books</a>
+        <a href="#about">About</a>
+        <a href="#newsletter">Newsletter</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <section class="hero">
+      <div class="hero-wrap">
+        <div>
+          <h1>Short stories, novellas & fairy tales.</h1>
+          <p class="tagline">Official site of Jana Still — author of short stories, novellas, scripts, and fairy tales.</p>
+          <div class="cta">
+            <a class="btn primary" href="#books" aria-label="Jump to Books">Browse Books →</a>
+            <a class="btn" href="#newsletter">Join Newsletter</a>
+          </div>
+        </div>
+        <div class="portrait" role="img" aria-label="Portrait of Jana Still"></div>
+      </div>
+    </section>
+
+    <section id="books">
+      <h2 class="section-title">Books</h2>
+      <div class="grid">
+        <!-- BOOK 1 -->
+        <article class="book-card">
+          <div class="book-cover" style="background-image:url('https://placehold.co/360x540/png?text=Academy+of+Eternity');" aria-label="Cover: Academy of Eternity"></div>
+          <div class="book-body">
+            <h3 class="book-title">Academy of Eternity — Book One</h3>
+            <div class="book-meta">Release: 2026 • ISBN: 978‑1‑23456‑789‑0 • Genre: Sci‑Fi, YA</div>
+            <p>In a hidden high‑tech institute inside a German castle, three teens are recruited to guard the timelines—and discover that saving the future means confronting the past.</p>
+            <div class="book-actions">
+              <a class="btn primary" href="#" rel="nofollow noopener">Buy eBook</a>
+              <a class="btn" href="#" rel="nofollow noopener">Paperback</a>
+              <a class="btn" href="#" rel="nofollow noopener">Goodreads</a>
+            </div>
+          </div>
+        </article>
+        <!-- BOOK 2 -->
+        <article class="book-card">
+          <div class="book-cover" style="background-image:url('https://placehold.co/360x540/png?text=Academy+of+Eternity+II');" aria-label="Cover: Academy of Eternity II"></div>
+          <div class="book-body">
+            <h3 class="book-title">Academy of Eternity — Book Two</h3>
+            <div class="book-meta">Coming Soon • Genre: Sci‑Fi, YA</div>
+            <p>The Chronosphere detects a fracture in history that leads the team into a conspiracy spanning centuries and continents.</p>
+            <div class="book-actions">
+              <a class="btn" href="#" rel="nofollow noopener">Pre‑order</a>
+              <a class="btn" href="#" rel="nofollow noopener">Read Sample</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <p style="color:var(--muted); margin-top:12px">Tip: Duplicate a <code>&lt;article class="book-card"&gt;…&lt;/article&gt;</code> block for more books.</p>
+    </section>
+
+    <section id="newsletter">
+      <h2 class="section-title">Newsletter</h2>
+      <div class="nl">
+        <!-- Replace the form action with your provider (e.g., Mailchimp, ConvertKit) -->
+        <form action="#" method="post">
+          <label class="sr-only" for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required aria-label="Email address" />
+          <button type="submit">Subscribe</button>
+        </form>
+        <p style="color:var(--muted); margin-top:10px">No spam. Unsubscribe anytime.</p>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2 class="section-title">About</h2>
+      <div class="about">
+        <p>Jana Still writes short stories, novellas, scripts, and fairy tales. Her work blends heart, wit, and wonder—from intimate character pieces to modern fables.</p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <p>For rights, media, and events: <a href="mailto:hello@example.com">hello@example.com</a></p>
+      <div class="socials">
+        <a href="#" aria-label="Twitter">Twitter/X</a>
+        <a href="#" aria-label="Instagram">Instagram</a>
+        <a href="#" aria-label="Goodreads">Goodreads</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>© <span id="y"></span> Jana Still. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Update year
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- HOW TO DEPLOY (quick notes)
+  1) Create a repo named janastill.github.io
+  2) Put this file at the repo root as index.html and commit
+  3) Visit https://YOUR-USERNAME.github.io
+  Optional: Settings → Pages → set branch to main, folder / (root)
+  Optional: Add CNAME file with your custom domain and point DNS to GitHub Pages
+  -->
+</body>
+</html>
